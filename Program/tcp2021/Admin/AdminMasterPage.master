@@ -1,0 +1,141 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="Admin_AdminMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="關鍵字內容" />
+    <meta name="description" content="描述" /><!--告訴搜尋引擎這篇網頁的內容或摘要。--> 
+    <meta name="generator" content="Notepad" /><!--告訴搜尋引擎這篇網頁是用什麼軟體製作的。--> 
+    <meta name="author" content="工研院 資科中心" /><!--告訴搜尋引擎這篇網頁是由誰製作的。--> 
+    <meta name="copyright" content="本網頁著作權所有" /><!--告訴搜尋引擎這篇網頁是...... --> 
+    <meta name="revisit-after" content="3 days" /><!--告訴搜尋引擎3天之後再來一次這篇網頁，也許要重新登錄。-->
+    <title>後台管理</title>
+    <link rel="stylesheet" href="<%= ResolveUrl("~/css/bootstrap.css") %>" /><!-- normalize & bootstrap's grid system -->
+    <link href="<%= ResolveUrl("~/Admin/css/font-awesome.min.css") %>" rel="stylesheet" /><!-- css icon -->
+    <link href="<%= ResolveUrl("~/Admin/css/superfish.css") %>" rel="stylesheet" type="text/css" /><!-- 下拉選單 -->
+    <link href="<%= ResolveUrl("~/Admin/css/jquery.mmenu.css") %>" rel="stylesheet" type="text/css" /><!-- mmenu css:行動裝置選單 -->
+    <link href="<%= ResolveUrl("~/Admin/css/jquery.powertip.css") %>" rel="stylesheet" type="text/css" /><!-- powertip:tooltips -->
+    <link href="<%= ResolveUrl("~/Admin/css/jquery.datetimepicker.css") %>" rel="stylesheet" type="text/css" /><!-- datepicker -->
+    <link href="<%= ResolveUrl("~/Admin/css/magnific-popup.css") %>" rel="stylesheet" type="text/css" /><!-- popup dialog -->
+    <link href="<%= ResolveUrl("~/Admin/css/OchiLayout.css") %>" rel="stylesheet" type="text/css" /><!-- ochsion layout base -->
+    <link href="<%= ResolveUrl("~/Admin/css/OchiColor.css") %>" rel="stylesheet" type="text/css" /><!-- ochsion layout color -->
+    <link href="<%= ResolveUrl("~/Admin/css/OchiRWD.css") %>" rel="stylesheet" type="text/css" /><!-- ochsion layout RWD -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<%= ResolveUrl("~/Admin/css/emoji.css") %>" rel="stylesheet" type="text/css" /><!-- Emoji -->
+    <link href="<%= ResolveUrl("~/Admin/css/style.css") %>" rel="stylesheet" type="text/css" />
+    <!-- IE 瀏覽器版本低於 9 處理 -->
+    <!--[if lte IE 9]>
+    <link href="css/cssie9.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <script type="text/javascript" src="<%= ResolveUrl("~/Admin/js/jquery-1.11.2.min.js") %>"></script>
+    <script type="text/javascript" src="<%= ResolveUrl("~/Admin/js/jquery.breakpoint-min.js") %>"></script><!-- 斷點設定 -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/Admin/js/superfish.min.js") %>"></script><!-- 下拉選單 -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/Admin/js/supposition.js") %>"></script><!-- 下拉選單:修正最後項在視窗大小不夠時的BUG -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/Admin/js/jquery.mmenu.min.js") %>"></script><!-- mmenu js:行動裝置選單 -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/Admin/js/jquery.touchSwipe.min.js") %>"></script><!-- 增加JS觸控操作 for mmenu -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/Admin/js/jquery.powertip.min.js") %>"></script><!-- powertip:tooltips -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/Admin/js/jquery.datetimepicker.js") %>"></script><!-- datepicker -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/Admin/js/jquery.easytabs.min.js") %>"></script><!-- easytabs tab -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/Admin/js/jquery.magnific-popup.min.js") %>"></script><!-- popup dialog -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.cookie.js") %>"></script><!-- cookie -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.matchHeight-min.js") %>"></script><!-- equal height解決bootstrap grid layout內容不等高時排版問題 -->
+    <!--my.js-->
+	<script type="text/javascript" src="<%= ResolveUrl("~/js/NickCommon.js") %>"></script>
+	<script type="text/javascript" src="<%= ResolveUrl("~/js/PageList.js") %>"></script>
+	<script type="text/javascript" src="<%= ResolveUrl("~/js/jquery-ui.1.12.1.js") %>"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!-- 開頭用div:修正mmenu form bug -->
+    <div>
+        <form id="form1" runat="server">
+            <div class="WrapperBody">
+            	<div class="WrapperHeader">
+                    <div class="container">
+                        <div class="loginfo font-normal">
+                        登入者：<%= username %>
+                        <!-- RWD 外部連結 start -->
+                            <div class="HeaderOtherLinkWrapper">
+                                <span id="HeaderOtherLink">
+                                    <ul>
+                                    	<li><a href="<%= ResolveUrl("~/Handler/logout.aspx") %>">登出</a></li>
+                                    </ul>
+                                </span>
+                            </div><!-- HeaderOtherLinkWrapper -->
+                            <span class="HeaderOtherLinkOpen"><a href="#HeaderOtherLinkS" class="open-popup-link">外部連結</a></span> 
+                            <div id="HeaderOtherLinkS" class="magpopup magSizeM mfp-hide">
+              		        	<div class="magpopupTitle textcenter">外部連結</div>
+                                <span id="HeaderOtherLinkCopy"></span>
+            		        </div><!--magpopup -->
+                        <!-- RWD 外部連結 end -->
+                        </div><!-- loginfo -->
+                    
+            		    <div class="logo"><img alt="logo" src="<%= ResolveUrl("~/Admin/images/logo.png") %>" class="img-responsive" /> </div>
+                    </div><!-- container -->
+                    
+            		<div class="MainMenu">
+                    <!-- 置中版面控制:滿版可移除container或改成container-fluid -->
+            		    <div class="container">
+                        <!-- 側邊選單開關容器 -->	
+            		    <div id="opensidemenu"></div>
+            		    <!-- 桌機主選單 -->          
+                        	<div class="superfishmenu">
+                                <ul>
+                                    <li><a href="<%= ResolveUrl("~/Admin/index.aspx") %>" title="首頁">首頁</a></li>
+                                    <li><a href="<%= ResolveUrl("~/Admin/Classlist.aspx") %>" title="線上課程">線上課程</a></li>
+                                    <li><a href="<%= ResolveUrl("~/Admin/newslist.aspx") %>" title="最新消息">最新消息</a></li>
+                                    <li><a href="<%= ResolveUrl("~/Admin/memberlist.aspx") %>" title="會員管理">會員管理</a></li>
+                                    <li><a href="<%= ResolveUrl("~/Admin/group.aspx") %>" title="組別管理">組別管理</a></li>
+                                </ul>
+                            </div><!-- superfishmenu -->
+                        </div><!-- container -->        
+            		</div><!-- MainMenu -->    
+                </div><!-- WrapperHeader -->
+               
+                <div class="container margin15T">
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </div><!-- conainer -->
+            </div><!-- WrapperBody -->
+        </form>
+    </div><!-- 結尾用div:修正mmenu form bug -->
+
+    <div class="WrapperFooter">
+    	<div class="footerblock container font-normal">
+    版權所有©2018 工業技術研究院｜ 建議瀏覽解析度1024x768以上<br />
+    業務窗口：黃金貝(分機：00000)｜網站製作：資科中心｜意見反應｜系統使用說明書
+    	</div><!--{* footerblock *}-->
+    </div><!-- WrapperFooter -->
+    
+    <!-- 側邊選單內容:動態複製主選單內容 -->
+    <div id="sidebar-wrapper">
+       
+    </div><!-- sidebar-wrapper -->
+
+    <!-- Magnific Popup -->
+    <div id="test-popup" class="magpopup magSizeM mfp-hide">
+      <div class="magpopupTitle">標題於此...</div>
+      <div class="padding10ALL">
+      內容...<br /><br /><br />
+      	<div class="twocol">
+        	<div class="right"><a href="#" class="genbtn closemagnificPopup">關閉</a></div>
+        </div><!-- twocol -->
+      </div><!-- padding10ALL -->
+    
+    </div><!--magpopup -->
+
+<!-- 本頁面使用的JS -->
+<script type="text/javascript">
+$(document).ready(function(){
+	
+});
+</script>
+<script type="text/javascript" src="<%= ResolveUrl("~/Admin/js/GenCommon.js") %>"></script><!-- UIcolor JS -->
+<script type="text/javascript" src="<%= ResolveUrl("~/Admin/js/PageCommon.js") %>"></script><!-- 系統共用 JS -->
+<script type="text/javascript" src="<%= ResolveUrl("~/Admin/js/autoHeight.js") %>"></script><!-- 高度不足頁面的絕對置底footer -->
+</body>
+</html>

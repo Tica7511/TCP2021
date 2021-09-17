@@ -1,0 +1,253 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageOther.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-language" content="zh-TW" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="關鍵字內容" />
+    <meta name="description" content="描述" />
+    <!--告訴搜尋引擎這篇網頁的內容或摘要。-->
+    <meta name="generator" content="Notepad" />
+    <!--告訴搜尋引擎這篇網頁是用什麼軟體製作的。-->
+    <meta name="author" content="工研院 資科中心" />
+    <!--告訴搜尋引擎這篇網頁是由誰製作的。-->
+    <meta name="copyright" content="本網頁著作權所有" />
+    <!--告訴搜尋引擎這篇網頁是...... -->
+    <meta name="revisit-after" content="3 days" />
+    <!--告訴搜尋引擎3天之後再來一次這篇網頁，也許要重新登錄。-->
+    <title>2021 APEC Medical Devices Regulatory Science Center of Excellence Workshop</title>
+    <link rel="stylesheet" href="<%= ResolveUrl("~/css/bootstrap.css") %>" />
+    <!-- normalize & bootstrap's grid system -->
+    <link href="<%= ResolveUrl("~/css/font-awesome.min.css") %>" rel="stylesheet" />
+    <!-- css icon -->
+    <link href="<%= ResolveUrl("~/css/superfish.css") %>" rel="stylesheet" type="text/css" />
+    <!-- 下拉選單 -->
+    <link href="<%= ResolveUrl("~/css/jquery.mmenu.css") %>" rel="stylesheet" type="text/css" />
+    <!-- mmenu css:行動裝置選單 -->
+    <link href="<%= ResolveUrl("~/css/jquery.powertip.css") %>" rel="stylesheet" type="text/css" />
+    <!-- powertip:tooltips -->
+    <link href="<%= ResolveUrl("~/css/jquery.datetimepicker.css") %>" rel="stylesheet" type="text/css" />
+    <!-- datepicker -->
+    <link href="<%= ResolveUrl("~/css/magnific-popup.css") %>" rel="stylesheet" type="text/css" />
+    <!-- popup dialog -->
+    <link href="<%= ResolveUrl("~/css/collapse.css") %>" rel="stylesheet" type="text/css" />
+    <!-- 收合展開 -->
+    <link href="<%= ResolveUrl("~/css/OchiLayout.css") %>" rel="stylesheet" type="text/css" />
+    <!-- ochsion layout base -->
+    <link href="<%= ResolveUrl("~/css/OchiColor.css") %>" rel="stylesheet" type="text/css" />
+    <!-- ochsion layout color -->
+    <link href="<%= ResolveUrl("~/css/OchiRWD.css") %>" rel="stylesheet" type="text/css" />
+    <!-- ochsion layout RWD -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/css/emoji.css") %>" rel="stylesheet" type="text/css" />
+    <!-- Emoji -->
+    <link href="<%= ResolveUrl("~/css/style.css") %>" rel="stylesheet" type="text/css" />
+    <!-- IE 瀏覽器版本低於 9 處理 -->
+    <!--[if lte IE 9]>
+    <link href="css/cssie9.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery-1.11.2.min.js") %>"></script>
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.breakpoint-min.js") %>"></script>
+    <!-- 斷點設定 -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/superfish.js") %>"></script>
+    <!-- 下拉選單 -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.mmenu.min.js") %>"></script>
+    <!-- mmenu js:行動裝置選單 -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.touchSwipe.min.js") %>"></script>
+    <!-- 增加JS觸控操作 for mmenu -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.powertip.min.js") %>"></script>
+    <!-- powertip:tooltips -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.datetimepicker.js") %>"></script>
+    <!-- datepicker -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.easytabs.min.js") %>"></script>
+    <!-- easytabs tab -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.magnific-popup.min.js") %>"></script>
+    <!-- popup dialog -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.cookie.js") %>"></script>
+    <!-- cookie -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.matchHeight-min.js") %>"></script>
+    <!-- equal height解決bootstrap grid layout內容不等高時排版問題 -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.collapse.js") %>"></script>
+    <!-- 收合展開 -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery.collapse_storage.js") %>"></script>
+    <!-- 收合展開:增加記憶功能 -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/animatescroll.min.js") %>"></script>
+    <!-- 動態滾動 -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/gsap.min.js") %>"></script>
+    <!-- GSAP -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/ScrollTrigger.min.js") %>"></script>
+    <!-- GSAP捲軸動畫 -->
+    <!--my.js-->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/NickCommon.js") %>"></script>
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/PageList.js") %>"></script>
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery-ui.1.12.1.js") %>"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            if ($("#mCompetence").val() == '03') {
+                $("#ul_loginmenu").append('<li><a href="<%= ResolveUrl("~/WebPage/Introductory.aspx") %>" title="Introductory Remarks">Introductory Remarks</a></li><li><a href="<%= ResolveUrl("~/WebPage/Speakers.aspx") %>" title="Speakers">Speakers</a></li><li><a href="<%= ResolveUrl("~/WebPage/classlist.aspx") %>" title="Online Courses">Online Courses</a></li>');
+            }
+            else {
+                $("#ul_loginmenu").append('<li><a href="<%= ResolveUrl("~/WebPage/Introductory.aspx") %>" title="Introductory Remarks">Introductory Remarks</a></li><li><a href="<%= ResolveUrl("~/WebPage/Speakers.aspx") %>" title="Speakers">Speakers</a></li><li><a href="<%= ResolveUrl("~/WebPage/classlist.aspx") %>" title="Online Courses">Online Courses</a></li><li><a href="<%= ResolveUrl("~/WebPage/assignment.aspx") %>" title="My Group">Assignment</a></li><li><a href="<%= ResolveUrl("~/WebPage/members.aspx") %>" title="Members">Members</a></li><li><a href="<%= ResolveUrl("~/WebPage/transcript.aspx") %>" title="My Transcript">My Transcript</a></li><li id="li_questionnaires"></li>');
+            }
+
+            $("#li_questionnaires").append('<a id="a_questionnaires" href="<%= ResolveUrl("~/WebPage/questionnaires.aspx") %>" title="questionnaires">Questionnaires</a>');
+
+            <%--if (questionnairesDate() == false)
+                $("#li_questionnaires").append('<a id="a_questionnairesX" href="javascript:void(0);" title="questionnaires">Questionnaires</a>');
+            else
+                $("#li_questionnaires").append('<a id="a_questionnaires" href="<%= ResolveUrl("~/WebPage/questionnaires.aspx") %>" title="questionnaires">Questionnaires</a>');--%>
+
+            $(document).on("click", "#a_questionnairesX", function () {
+                var today = new Date();
+                var startday = new Date(2021, 8, 28);
+                var endday = new Date(2021, 9, 18);
+                if (today < startday) {
+                    alert("The questionnaires will open at 2021.8.28 00:00(GMT+8) ");
+                    return;
+                }
+                if (today > endday) {
+                    alert("The questionnaires has end at 2021.9.18 00:00(GMT+8) ");
+                    return;
+                }
+            });
+
+            //未登入
+            if ($("#mName").val() == '') {
+                $("#a_login").show();
+                $("#loginfo").hide();
+                $("#registList").show();
+                $("#studyList").hide();
+            }
+            //登入後
+            else {
+                $("#name").html($("#mName").val());
+                $("#a_login").hide();
+                $("#loginfo").show();
+                $("#registList").hide();
+                $("#studyList").show();
+                if ($("#mCompetence").val() == '01') {
+                    $("#a_manage").show();
+                }
+            }
+        });
+
+        function questionnairesDate() {
+            var status = true;
+            var today = new Date();
+            var startday = new Date(2021, 7, 28);
+            var endday = new Date(2021, 8, 18);
+            if (today < startday || today > endday)
+                status = false;
+
+            return status;
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <!-- 開頭用div:修正mmenu form bug -->
+    <div>
+        <form id="form1" runat="server">
+            <input type="hidden" id="mName" value="<%= username %>" />
+            <input type="hidden" id="mCompetence" value="<%= usercompetence %>" />
+            <a href="#Insidemaincontent" id="jumptocontent" title="跳到主要內容區塊" tabindex="1">跳到主要內容區塊</a>
+
+            <div class="WrapperBody">
+                <div class="WrapperHeader" style="height: 120px;">
+                    <div class="container">
+                        <div class="twocol">
+                            <div class="left logo">
+                            </div>
+                            <div class="right textright font-normal">
+                                <a id="a_login" href="<%= ResolveUrl("~/WebPage/login.aspx") %>">Login</a>
+                                <div id="loginfo" class="loginfo padding10RL font-normal">
+                                    Hi <span id="name"></span>
+                                    <!-- RWD 外部連結 start -->
+                                    <div class="HeaderOtherLinkWrapper">
+                                        <span id="HeaderOtherLink">
+                                            <ul>
+                                                <li><a href="<%= ResolveUrl("~/Handler/logout.aspx") %>">Logout</a></li>
+                                                <li><a id="a_manage" href="<%= ResolveUrl("~/Admin/index.aspx") %>" target="_blank" style="display: none">後台管理</a></li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <!-- HeaderOtherLinkWrapper -->
+                                    <span class="HeaderOtherLinkOpen"><a href="#HeaderOtherLinkS" class="open-popup-link">外部連結</a></span>
+                                    <div id="HeaderOtherLinkS" class="magpopup magSizeM mfp-hide">
+                                        <div class="magpopupTitle textcenter">外部連結</div>
+                                        <span id="HeaderOtherLinkCopy"></span>
+                                    </div>
+                                    <!--magpopup -->
+                                    <!-- RWD 外部連結 end -->
+                                </div>
+                                <!-- loginfo -->
+                            </div>
+                            <!-- right -->
+                        </div>
+                        <!-- twocol -->
+                        <div class="textcenter IconCa font-bold font-size3 margin10T">2021國際醫療器材法規研討會</div>
+                        <div class="textcenter font-size5 font-bold margin20B">Conference on International Medical Device Regulations</div>
+                    </div>
+                    <!-- container -->
+                </div>
+                <!-- WrapperHeader -->
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <!-- WrapperBody -->
+
+            <div class="WrapperFooter">
+                <div class="footerblock container font-normal">
+                    版權所有©2021 工業技術研究院｜ 建議瀏覽解析度1024x768以上
+                </div>
+                <!--{* footerblock *}-->
+            </div>
+            <!-- WrapperFooter -->
+
+            <!-- 側邊選單內容:動態複製主選單內容 -->
+            <div id="sidebar-wrapper">
+            </div>
+            <!-- sidebar-wrapper -->
+        </form>
+    </div>
+    <!-- 結尾用div:修正mmenu form bug -->
+    <!-- Magnific Popup -->
+    <div id="test-popup" class="magpopup magSizeM mfp-hide">
+        <div class="magpopupTitle">標題於此...</div>
+        <div class="padding10ALL">
+            內容...<br />
+            <br />
+            <br />
+            <div class="twocol">
+                <div class="right"><a href="#" class="genbtn closemagnificPopup" title="">關閉</a></div>
+            </div>
+            <!-- twocol -->
+        </div>
+        <!-- padding10ALL -->
+    </div>
+    <!--magpopup -->
+
+    <!-- 本頁面使用的JS -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.equalheightblock').matchHeight({
+                byRow: true,//若為false,則所有區塊等高
+                property: 'height',//使用min-height會出問題
+                target: null,//設定等高對象:$('.sidebar')
+                remove: false
+            });
+        });
+    </script>
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/GenCommon.js") %>"></script>
+    <!-- UIcolor JS -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/PageCommon.js") %>"></script>
+    <!-- 系統共用 JS -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/autoHeight.js") %>"></script>
+    <!-- 高度不足頁面的絕對置底footer -->
+</body>
+</html>

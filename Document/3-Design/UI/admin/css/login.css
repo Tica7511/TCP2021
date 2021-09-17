@@ -1,0 +1,59 @@
+@charset "utf-8";
+/*  ===== 基本覆寫 ===== */
+*{font-family:Verdana,微軟正黑體, Microsoft JhengHei, Arial, Helvetica, sans-serif;}
+html,body{height:100%; margin:0; padding:0;}
+body{background-color:#edf3d5;
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#edf3d5), to(#fdfff3));
+    background-image: -webkit-linear-gradient(top, #edf3d5, #fdfff3);
+    background-image: -moz-linear-gradient(top, #edf3d5, #fdfff3);
+    background-image: -o-linear-gradient(top, #edf3d5, #fdfff3);
+    background-image: -ms-linear-gradient(top, #edf3d5, #fdfff3);
+    background-image: linear-gradient(to bottom, #edf3d5, #fdfff3);}
+/*  ===== 系統layout ===== */
+.loginwrapper{padding-top:100px;}
+.loginblock{
+	max-width:300px;
+	margin:0 auto;
+	border: 1px solid #CCC;
+	padding:20px 10px 30px 10px;
+border-radius: 10px;
+background-image: -webkit-gradient(linear, center top, center bottom, from(#fcfcfc), to(#bfbfbf), color-stop(23%, #000), color-stop(34%, rgba()), color-stop(38%, #f2f2f2));
+background-image: -webkit-linear-gradient(top, #fcfcfc, #000 23%, rgba() 34%, #f2f2f2 38%, #bfbfbf);
+background-image: -moz-linear-gradient(top, #fcfcfc, #000 23%, rgba() 34%, #f2f2f2 38%, #bfbfbf);
+background-image: -o-linear-gradient(top, #fcfcfc, #000 23%, rgba() 34%, #f2f2f2 38%, #bfbfbf);
+background-image: -ms-linear-gradient(top, #fcfcfc, #000 23%, rgba() 34%, #f2f2f2 38%, #bfbfbf);
+background-image: linear-gradient(to bottom, #fcfcfc, #000 23%, rgba() 34%, #f2f2f2 38%, #bfbfbf);
+-webkit-box-shadow: 0 0 15px rgba(0,0,0,0.31);
+-moz-box-shadow: 0 0 15px rgba(0,0,0,0.31);
+box-shadow: 0 0 15px rgba(0,0,0,0.31);
+background-color:#fff;
+
+}
+.loginbox td{padding:5px;}
+.magpopup{
+  position: relative;
+  background: #FFF;
+  padding: 0px;
+  width: auto;
+  width:95%;
+  margin: 20px auto;
+  border-radius:10px;
+}
+.magSizeS{max-width: 600px;}
+.magSizeM{max-width: 900px;}
+.magSizeL{max-width: 1300px;}
+
+.magpopupTitle{padding:10px; border-radius:10px 10px 0 0; font-size:15px;
+border-bottom:1px solid #c8c8c8; background-color:#f1f1f1;
+background-image: -webkit-linear-gradient(top, #f1f1f1 0%, #ededed 60%, #dedede 100%);
+background-image: -moz-linear-gradient(top, #f1f1f1 0%, #ededed 60%, #dedede 100%);
+background-image: -ms-linear-gradient(top, #f1f1f1 0%, #ededed 60%, #dedede 100%);
+background-image: -o-linear-gradient(top, #f1f1f1 0%, #ededed 60%, #dedede 100%);
+background-image: linear-gradient(to bottom, #f1f1f1 0%, #ededed 60%, #dedede 100%);
+}
+@media (max-width: 500px) {
+.loginwrapper{padding-top:50px;}
+.loginblock{ width:95%;}
+}
+
+/*  ===== 系統使用套件 ===== */
