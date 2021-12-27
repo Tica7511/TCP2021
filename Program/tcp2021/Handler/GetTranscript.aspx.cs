@@ -10,8 +10,8 @@ using System.Xml;
 public partial class Handler_GetTranscript : System.Web.UI.Page
 {
     MemberClass_DB mcdb = new MemberClass_DB();
-    Questionnaires_DB qdb = new Questionnaires_DB();
-    MemberAssignment_DB madb = new MemberAssignment_DB();
+    //Questionnaires_DB qdb = new Questionnaires_DB();
+    //MemberAssignment_DB madb = new MemberAssignment_DB();
 
     public string cCount;
     public string mcCount;
@@ -37,24 +37,24 @@ public partial class Handler_GetTranscript : System.Web.UI.Page
             }
             #endregion
 
-            #region 問卷
-            qdb._Q_Parentid = LogInfo.mGuid;
-            DataTable qdt = qdb.GetCount();
-            if (qdt.Rows.Count > 0)
-            {
-                qCount = qdt.Rows[0]["qCount"].ToString().Trim();
-            }
-            #endregion
+            //#region 問卷
+            //qdb._Q_Parentid = LogInfo.mGuid;
+            //DataTable qdt = qdb.GetCount();
+            //if (qdt.Rows.Count > 0)
+            //{
+            //    qCount = qdt.Rows[0]["qCount"].ToString().Trim();
+            //}
+            //#endregion
 
-            #region 作業
-            madb._MA_Mguid = LogInfo.mGuid;
-            DataTable madt = madb.GetCount();
-            if (madt.Rows.Count > 0)
-            {
-                maCount = madt.Rows[0]["maCount"].ToString().Trim();
-                aCount = madt.Rows[0]["aCount"].ToString().Trim();
-            }
-            #endregion
+            //#region 作業
+            //madb._MA_Mguid = LogInfo.mGuid;
+            //DataTable madt = madb.GetCount();
+            //if (madt.Rows.Count > 0)
+            //{
+            //    maCount = madt.Rows[0]["maCount"].ToString().Trim();
+            //    aCount = madt.Rows[0]["aCount"].ToString().Trim();
+            //}
+            //#endregion
 
             DataTable dt = new DataTable();
             dt.Columns.Add("cCount", typeof(string));

@@ -267,6 +267,52 @@ background-image: linear-gradient(to bottom, #f1f1f1 0%, #ededed 60%, #dedede 10
 #jumptocontent{color:rgba(0, 0, 0, 0); position:absolute;}
 #jumptocontent:focus{border:1px solid #09F;color:rgba(0, 0, 0, 1);}
 a:focus{border:1px solid #09F;}
+
+/* 分頁 */
+a.pagestylegen {
+    line-height: 28px;
+    vertical-align: middle;
+    color: #737373;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    text-align: center;
+    width: 28px;
+    display: inline-block;
+    transition: all ease-in-out 0.2s;
+}
+
+    a.pagestylegen:hover {
+        text-decoration: none;
+        color: #21a7fc;
+        border: 1px solid #21a7fc;
+    }
+
+a.pagestylenone {
+    color: #d9d9d9;
+    border: 1px solid #d9d9d9;
+}
+
+    a.pagestylenone:hover {
+        cursor: default;
+        color: #d9d9d9;
+        border: 1px solid #d9d9d9;
+    }
+
+a.pagestylecurrent {
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #21a7fc;
+    background: #21a7fc;
+}
+
+    a.pagestylecurrent:hover {
+        color: #ffffff;
+        text-decoration: none;
+        border: 1px solid #21a7fc;
+        background: #21a7fc;
+    }
+
+
 /*  ===== 本系統專用 ===== */
 .filetitle{border-bottom:2px solid #0fb99b; padding-bottom:5px;  display:inline-block; margin-bottom:-6px;}
 .filetitlewrapper{border-bottom:1px solid #286a8c; padding:5px 0;}

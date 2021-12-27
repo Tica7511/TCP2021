@@ -28,7 +28,7 @@
                 if ($("#txt_birthday").val() == "")
                     msg += "請輸入【密碼】<br>";
                 if ($("#sel_group").val() == '') {
-                    if (($("#txt_competence").val() == '02') || ($("txt_competence").val() == '03')) {
+                    if (($("#txt_competence").val() == '02') || ($("#txt_competence").val() == '03')) {
                         msg += "請輸入【組別】<br>";
                     }
                 }

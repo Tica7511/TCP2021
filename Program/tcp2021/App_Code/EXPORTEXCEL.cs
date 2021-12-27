@@ -8,6 +8,7 @@ using System.Linq;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
 using NPOI.SS.Util;
+using System.Text.RegularExpressions;
 
 namespace ED.HR.EXPORTEXCEL.WebForm
 {
@@ -16,6 +17,9 @@ namespace ED.HR.EXPORTEXCEL.WebForm
         Member_DB mdb = new Member_DB();
         Class_DB cdb = new Class_DB();
         MemberClass_DB mcdb = new MemberClass_DB();
+        public const string invalidCharsRegex = @"[/\\*'?[\]:]+";
+        public const int maxLength = 31;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string FilePath = string.Empty;
@@ -40,7 +44,7 @@ namespace ED.HR.EXPORTEXCEL.WebForm
 
                 for (int i = 0; i < cdt.Rows.Count; i++)
                 {
-                    InsertIntoSheetVer(hssfworkbook, cdt.Rows[i]["C_Guid"].ToString().Trim(), cdt.Rows[i]["C_Name"].ToString().Trim());
+                    InsertIntoSheetVer(hssfworkbook, cdt.Rows[i]["C_Guid"].ToString().Trim(), cdt.Rows[i]["C_Sort"].ToString().Trim());
                 }
             }
 
@@ -68,7 +72,18 @@ namespace ED.HR.EXPORTEXCEL.WebForm
 
                 if (dt.Rows.Count > 0)
                 {
-                    Sheet sheet = hssfworkbook.CreateSheet(className);
+                    //className = Regex.Replace(className, invalidCharsRegex, " ").Replace("  ", " ").Trim();
+
+                    //if (string.IsNullOrEmpty(className))
+                    //{
+                    //    className = "Default";   // cannot be empty
+                    //}
+                    //else if (className.Length > maxLength)
+                    //{
+                    //    className = className.Substring(0, maxLength);
+                    //}
+
+                    Sheet sheet = hssfworkbook.CreateSheet("Course " + className);
 
                     sheet.CreateRow(0);
                     sheet.GetRow(0).CreateCell(0).SetCellValue("會員姓名");
@@ -91,7 +106,7 @@ namespace ED.HR.EXPORTEXCEL.WebForm
 
                 if(dt.Rows.Count > 0)
                 {
-                    Sheet sheet = hssfworkbook.CreateSheet(className);
+                    Sheet sheet = hssfworkbook.CreateSheet("Course " + className);
 
                     sheet.CreateRow(0);
                     sheet.GetRow(0).CreateCell(0).SetCellValue("Name");
